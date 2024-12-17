@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<footer th:fragment="footer" class="page-footer font-small cyan darken-3">
+    <div class="footer-copyright text-center py-3">
+        <div class="info">
+            <div class="center-box flex">
+                <div class="info-box">
+                    <ul class="flex">
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">여행약관</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">여행보험</a></li>
+                        <li><a href="#">여행플래너</a></li>
+                        <li><a href="#">대리점개설문의</a></li>
+                    </ul>
+                </div>
+                <div class="family">
+                    <a href="#" class="flex">
+                        <p>패밀리사이트</p>
+                        <span><img th:src="@{/img/down_arrow.png}" alt="화살표"></span>
+                    </a>
+                    <div class="family-list">
+                        <a href="#">Cruise</a>
+                        <a href="#">BizMODE</a>
+                        <a href="#">리버투어 인터내셔널</a>
+                        <a href="#">다낭 스테이 호텔</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="addr">
+            <div class="center-box flex">
+                <address>
+                    (주)리버투어네트워크 | 대표이사 홍길동 | 사업자등록번호 201-00-000001 | 통신판매업신고번호중구 제0001호 | 호스팅 업체(주)리버투어네트워크<br>
+                    관광사업자 등록번호1000-04(서울특별시 중구) | 영업여행업보증15억 1천만원 | 기획여행영업보증7억원<br>
+                    상담문의1500-0000 | 팩스02-000-0000 | 주소서울특별시 중구 을지로 16 백남빌딩<br>
+                    COPYRIGHT RIVERTOUR. ALL RIGHTS RESERVED.
+                </address>
+                <div class="sns">
+                    <ul class="flex">
+                        <li>
+                            <a href="#">
+                                <i class="bi bi-facebook"></i>
+                                <img th:src="@{/img/facebook.png}" alt="페이스북">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="bi bi-youtube"></i>
+                                <img th:src="@{/img/youtube.png}" alt="유튜브">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img th:src="@{/img/instagram.png}" alt="인스타그램">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>

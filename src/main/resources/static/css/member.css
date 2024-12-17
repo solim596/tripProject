@@ -1,0 +1,74 @@
+.mgt_30 {
+    margin-top: 30px;
+}
+.mgr_10 {
+    margin-right: 10px;
+}
+.input_100 {
+    width: 100%;
+}
+.txt-r {
+    text-align: right;
+}
+.txt-l {
+    text-align: left;
+}
+/* 로그인(register_html) */
+.register_html {
+    border: 1px solid #ddd;
+    padding: 70px;
+    border-radius: 20px;
+    width: 550px;
+    margin: auto;
+}
+
+.register_html table {
+    width: 100%;
+}
+
+.register_html table tr {
+    display: flex;
+    flex-flow: column;
+}
+.register_html table tr td {
+    margin: 5px 0;
+}
+/*.register_html table tr td a {
+    text-align: right;
+}*/
+.register_html table tr td .d-flex {
+    height: 35px;
+}
+.register_html table tr td input {
+    width: 100%;
+    height: 35px;
+}
+.register_html table tr td .d-flex .btn {
+    font-size: 15px;
+}
+.register_html table tr .btn_box {
+    margin-top: 20px;
+}
+
+/* 아이디 비밀번호 찾기/재설정 */
+.id_pw_rep {
+    width: 500px;
+    margin: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.id_pw_rep table tr {
+    display: flex;
+    flex-flow: column;
+}
+.id_pw_rep .text-danger {
+    margin-bottom: -30px;
+}
+.id_pw_rep form {
+    white-space: pre-line;
+}
+.id_pw_rep form input {
+    width: 100%;
+}

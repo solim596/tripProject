@@ -1,0 +1,39 @@
+.grid_3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+.goods_list_html .card {
+    margin-bottom: 20px;
+    width: 390px;
+    flex-flow: column;
+    border-radius: 15px;
+}
+.goods_list_html .card img {
+    border-radius: 15px 15px 0 0;
+}
+.goods_list_html .card .card-body {
+    width: 100%;
+    height: 100%;
+}
+.goods_list_html .card .card-body h5 {
+    font-size: 0.8rem;
+}
+.goods_list_html .card .card-body h4 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    white-space: warp;
+}
+.goods_list_html .card .card-body p {
+    font-size: 11px;
+    line-height: 2px;
+}
+.goods_list_html .card .card-body button {
+    font-size: 12px;
+}
+
+/* cart.html */
+.cart_html tr td img {
+    width: 60px;
+}

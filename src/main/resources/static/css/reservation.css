@@ -1,0 +1,229 @@
+.content .cont-area .img-area {
+    width: 380px;
+    height: 230px;
+}
+.content .cont-area .img-area img {
+    border-radius: 20px;
+}
+
+.content .cont-area .cont {
+    width: 790px;
+}
+.content .cont-area .cont p:nth-child(5) {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+
+/* 캘린더 */
+#calendar .dateTimeWrapper {
+    margin-left: -13px;
+    padding: 15px;
+}
+
+#calendar .currentMonth {
+    display: inline;
+    color: #37BC9B !important;
+    text-shadow: 0 0 0 #37BC9B;
+    font-size: 14px;
+}
+
+#calendar .currentYear {
+    display: inline;
+    padding-left: 5px;
+    color: #37BC9B !important;
+    font-size: 14px;
+}
+
+#calendar .currentDay {
+    color: #37BC9B !important;
+    text-shadow: 0 0 0 #37BC9B;
+    font-size: 22px;
+}
+
+#calendar .currentTime {
+    font-size: 52px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    line-height: 0;
+}
+
+#calendar .meaning {
+    margin-left: 5px;
+}
+
+#calendar .dateHolder {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    overflow-x: auto;
+}
+
+#calendar .dateHolder li {
+    display: inline;
+    text-align: center;
+    cursor: pointer;
+}
+
+#calendar .dateHolder div {
+    padding: 8px;
+}
+
+#calendar .dateHolder .date {
+    font-size: 18px;
+}
+
+#calendar .dateHolder .day {
+    padding-top: 8px;
+}
+
+#calendar .dateCurrent {
+    color: #37BC9B !important;
+    text-shadow: 0 0 0 #37BC9B;
+}
+
+#calendar .day.saturday {
+    color: red;
+}
+
+#calendar .day.sunday {
+    color: red;
+}
+
+#calendar .date.saturday {
+    color: red;
+}
+
+#calendar .date.sunday {
+    color: red;
+}
+
+#calendar .center {
+    height: 100%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    font-size: 2.5em;
+    color: white;
+}
+
+#calendar .flex {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#calendar button {
+    border:1px solid #37BC9B;
+    color: #37BC9B;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#calendar button:hover {
+    background-color: #eee;
+}
+.trip-img {
+    width:120px;
+}
+
+#calendar .dateTimeWrapper .pn_btn {
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+/* list.html */
+.list_html td img {
+    width: 150px;
+}
+.list_html .add_btn {
+    display: flex;
+    justify-content: end;
+}
+
+/* add.html */
+.add_html {
+    width: 50%;
+    margin: 0 auto;
+}
+.add_html .table tr td:first-child {
+    width: 100px;
+}
+.add_html .table tr td:last-child input {
+    width: 100%;
+}
+
+/* booking.html */
+.booking_wrap .trip_cont {
+    margin-top: 30px;
+    background-color: #fafafa;
+    padding: 40px;
+}
+.booking_wrap .trip_cont .trip_prod {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    border: 1px solid #ccc;
+    display: flex;
+    width: 550px;
+}
+.mt_40 {
+    margin-top: 40px;
+}
+.mb_30 {
+    margin-bottom: 30px;
+}
+.booking_wrap .trip_cont .trip_prod ul {
+    width: 502px;
+    margin-left: 0;
+}
+.booking_wrap .trip_cont .trip_prod ul li .category {
+    width: 300px;
+}
+
+.booking_wrap .trip_cont .trip_prod ul li a {
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #3B71B8;
+    border-radius: 10px;
+
+}
+
+.booking_wrap .trip_cont .trip_prod ul li .reserv_cont p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* reserve.html */
+.reserve_wrap img {
+    width: 603px;
+    height: 360px;
+    border-radius: 20px;
+}
+.reserve_wrap .reserve_cont {
+    width: 550px;
+}
+
+/* view.html */
+.grid_view {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+.view_html .card {
+    width: 540px;
+    border-radius: 15px;
+}
+.view_html .card img {
+    border-radius: 15px 15px 0 0;
+}
+
+/*  */

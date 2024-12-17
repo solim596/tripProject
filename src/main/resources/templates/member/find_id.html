@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>아이디 찾기</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="center-box">
+        <div class="id_pw_rep">
+            <h2>아이디 찾기</h2>
+            <form id="findIdForm">
+                <label for="email">이메일:</label>
+                <input id="email" name="email" required type="email">
+                <button onclick="findId()" type="button" class="btn btn-primary mgt_30">아이디 찾기</button>
+            </form>
+            <div id="result" class="mgt_30"></div>
+        </div>
+    </div>
+</div>
+<script layout:fragment="script" type="text/javascript">
+    function findId() {
+        const email = $("#email").val();
+        $.ajax({
+            url: '/member/find_id',
+            type: 'post',
+            data: { email:email },
+            success: function (response) {
+                $("#result").text(response);
+            },
+            error: function () {
+                alert("서버 오류가 발생했습니다.");
+            }
+        });
+    }
+</script>
+</body>
+</html>

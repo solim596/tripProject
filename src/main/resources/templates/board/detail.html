@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항</title>
+</head>
+<body>
+<div class="detail_wrap" layout:fragment="content">
+    <div class="center-box">
+        <h2 style="text-align: center;">상세보기</h2>
+        <form method="post" th:action="@{/board/write}">
+            <table class="table table-light table-bordered">
+                <tr>
+                    <td>번호</td>
+                    <td class="flex">
+                        <p th:text="${board.id}"></p>
+                        <div class="cnt flex">
+                            <p>조회수 : </p>
+                            <p th:text="${board.count}"></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>제목</td>
+                    <td class="flex">
+                        <div class="title_form">
+                            <p th:text="${board.title}"></p>
+                            <p th:text="${board.createdAt}"></p>
+                        </div>
+                        <div class="flex">
+                            <p>작성자 : </p>
+                            <p th:text="${board.username}"></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>내용</td>
+                    <td><textarea cols="70" readonly rows="15" style='overflow:visible'
+                                  th:text="${board.content}"></textarea></td>
+                </tr>
+                <tr>
+                    <td>수정일</td>
+                    <td><p th:text="${board.modifyAt}"></p></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a class="btn btn-outline-secondary" th:href="@{|/board/modify/${board.id}|}">수정</a>
+                        <a class="delete btn btn-danger" href="javascript:void(0)"
+                           th:data-uri="@{|/board/delete/${board.id}|}">삭제</a>
+                        <a class="btn btn-outline-secondary" th:href="@{/board/list}">목록</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<script layout:fragment="script" type="text/javascript">
+    const delete_elements = document.getElementsByClassName("delete");
+    Array.from(delete_elements).forEach(function(element) {
+      element.addEventListener("click", function() {
+        if(confirm("정말 삭제하시겠습니까?")) {
+          location.href = this.dataset.uri;
+        }
+      });
+    });
+</script>
+</body>
+</html>

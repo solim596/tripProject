@@ -1,0 +1,21 @@
+.subPage .img_area {
+    width: 40%;
+    border-radius: 20px;
+}
+.subPage img {
+    border-radius: 20px;
+}
+.subPage .item-list ul {
+    padding-left: 0;
+}
+.subPage .item-list ul li {
+    display: flex;
+    margin-bottom: 30px;
+}
+.subPage .item-list ul li .cont {
+    margin-left: 20px;
+    width: 630px
+}
+.subPage .item-list ul li .cont p {
+    white-space: wrap;
+}

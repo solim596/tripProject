@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>여행상품 등록하기</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="center-box">
+        <div class="add_html">
+            <h2>여행상품 등록</h2>
+            <form enctype="multipart/form-data" method="post" th:object="${tripForm}">
+                <input type="hidden" th:name="${_csrf?.parameterName}" th:value="${_csrf?.token}">
+                <table class="table">
+                    <tr>
+                        <td>여행 상품 :</td>
+                        <td>
+                            <input name="title" th:field="*{title}" type="text">
+                            <span th:errors="*{title}" th:if="${#fields.hasErrors('title')}"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>여행 태그 :</td>
+                        <td>
+                            <input name="tag" th:field="*{tag}" type="text">
+                            <span th:errors="*{tag}" th:if="${#fields.hasErrors('tag')}"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>항공 :</td>
+                        <td>
+                            <input name="air" th:field="*{air}" type="text">
+                            <span th:errors="*{air}" th:if="${#fields.hasErrors('air')}"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>여행 일정 :</td>
+                        <td>
+                            <input name="plan" th:field="*{plan}" type="text">
+                            <span th:errors="*{plan}" th:if="${#fields.hasErrors('plan')}"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>출발일 :</td>
+                        <td>
+                            <input name="startDate" placeholder="yyyy-MM-dd" th:field="*{startDate}" type="text">
+                            <span th:errors="*{startDate}" th:if="${#fields.hasErrors('startDate')}"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>예약 인원 :</td>
+                        <td>
+                            <input name="personnel" th:field="*{personnel}" type="text">
+                            <span th:errors="*{personnel}" th:if="${#fields.hasErrors('personnel')}"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>가격 :</td>
+                        <td>
+                            <input name="price" th:field="*{price}" type="text">
+                            <span th:errors="*{price}" th:if="${#fields.hasErrors('price')}"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>여행 사진 :</td>
+                        <td>
+                            <input name="file" th:field="*{file}" type="file">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="submit" class="btn btn-info">저장</button>
+                            <button onclick="location.href='/trip/list'" type="button" class="btn btn-outline-secondary">목록</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+<script layout:fragment="script" type="text/javascript">
+
+</script>
+</body>
+</html>

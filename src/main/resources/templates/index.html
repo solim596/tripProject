@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>리버투어</title>
+</head>
+<body>
+<div class="wrap" layout:fragment="content">
+    <!-- s1 -->
+    <section class="s1">
+        <div class="main-slide">
+            <div class="swiper swiper1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide flex">
+                        <div class=" slide-bg slide-bg1"></div>
+                        <div class="slide-img slide-img1"></div>
+                    </div>
+                    <div class="swiper-slide flex">
+                        <div class=" slide-bg slide-bg2"></div>
+                        <div class="slide-img slide-img2"></div>
+                    </div>
+                    <div class="swiper-slide flex">
+                        <div class=" slide-bg slide-bg3"></div>
+                        <div class="slide-img slide-img3"></div>
+                    </div>
+                </div><!-- swiper-wrapper -->
+            </div><!-- swiper -->
+        </div><!-- main-slide -->
+        <div class="main-slide-txt">
+            <div class="swiper swiper2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide flex2">
+                        <h2>노을이 아름다운<br>여행코스</h2>
+                        <p>#노을길을 #따라가는 #경치여행</p>
+                    </div>
+                    <div class="swiper-slide flex2">
+                        <h2>푸른빛 파란하늘<br>낭만코스</h2>
+                        <p>#푸른바다 해변을 즐기는 다양한 관람코스</p>
+                    </div>
+                    <div class="swiper-slide flex2">
+                        <h2>도심속을 따라가는<br>문화코스</h2>
+                        <p>#도시의 문명을 탐험하며 거닐다.</p>
+                    </div>
+                </div><!-- swiper-wrapper -->
+            </div><!-- swiper -->
+        </div><!-- main-slide-txt -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </section><!-- s1 -->
+
+    <!-- s2 -->
+    <section class="s2">
+        <div class="center-box">
+            <div class="s2_title flex">
+                <h2>MD 추천</h2>
+                <img alt="MD추천" th:src="@{/img/good.png}">
+            </div>
+            <div class="sub_title">
+                <p>이번주 주목해야 하는 상품</p>
+            </div>
+            <div class="swiper swiper3">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" th:each="item : ${tripItems1}">
+                        <div class="swiper-slide-img">
+                            <img th:alt="${item.title}" th:src="${item.image}">
+                        </div>
+                        <div class="content">
+                            <p th:text="${item.category2}"></p>
+                            <h3 th:utext="${item.title}"></h3>
+                            <div class="swiper-slide-txt flex">
+                                <p th:text="${item.category1}"></p>
+                                <p th:text="${item.category3}"></p>
+                            </div>
+                            <div class="pri_lk flex">
+                                <p th:text="${#numbers.formatInteger(item.lprice, 3, 'COMMA') + '원 ~'}"></p>
+                                <a th:href="@{|/reservation/booking/${item.id}|}">예약하기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev">
+                <svg fill="none" height="24" stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="swiper-button-next">
+                <svg fill="none" height="24" stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+    </section><!-- s2 -->
+
+    <!-- s3 -->
+    <section class="s3">
+        <div class="center-box flex">
+            <div class="left-area">
+                <div class="left-bg"></div>
+                <div class="titleL">
+                    <h2>모든순간 두근두근</h2>
+                    <p>리버투어에서 만나보는 최신 정보</p>
+                </div>
+                <div class="swiper-sc4">
+                    <div class="swiper swiper4">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" th:each="item : ${tripItems2}">
+
+                                <a th:href="@{|/reservation/booking/${item.id}|}">
+                                    <img th:alt="${item.title}" th:src="${item.image}">
+                                    <h3 th:utext="${item.title}"></h3>
+                                </a>
+
+                            </div><!-- swiper-slide -->
+                        </div><!-- swiper-wrapper -->
+                    </div><!-- swiper swiper4 -->
+                    <div class="swiper-button-prev">
+                        <svg fill="none" height="24" stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="swiper-button-next">
+                        <svg fill="none" height="24" stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+
+                <div class="swiper-sc5">
+                    <div class="swiper swiper5">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide flex">
+                                <a href="#">
+                                    <div class="slide-img slide-img1"></div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide flex">
+                                <a href="#">
+                                    <div class="slide-img slide-img2"></div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide flex">
+                                <a href="#">
+                                    <div class="slide-img slide-img3"></div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide flex">
+                                <a href="#">
+                                    <div class="slide-img slide-img4"></div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide flex">
+                                <a href="#">
+                                    <div class="slide-img slide-img5"></div>
+                                </a>
+                            </div>
+                        </div><!-- swiper-wrapper -->
+                    </div><!-- swiper swiper5 -->
+                </div><!-- swiper-sc5 -->
+            </div><!-- left-area -->
+
+
+            <div class="right-area">
+                <div class="top-cont-R">
+                    <div class="titleR">
+                        <p>최근 본 상품이 아직 없으시네요<br><b>이런 지역의 상품은 어떠세요?</b></p>
+                    </div>
+                    <div class="swiper-sc6">
+                        <div class="swiper swiper6">
+                            <div class="swiper-wrapper around">
+                                <div class="swiper-slide">
+                                    <div class="rank flex">
+                                        <p class="mr_25">1</p>
+                                        <p class="width_300">대만</p>
+                                        <a class="ml_40 bod_r" href="#">둘러보기</a>
+                                    </div>
+                                    <div class="rank flex">
+                                        <p class="mr_25">2</p>
+                                        <p class="width_300">보홀</p>
+                                        <a class="ml_40 bod_r" href="#">둘러보기</a>
+                                    </div>
+                                    <div class="rank flex">
+                                        <p class="mr_25">3</p>
+                                        <p class="width_300">다낭</p>
+                                        <a class="ml_40 bod_r" href="#">둘러보기</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="rank flex">
+                                        <p class="mr_25">4</p>
+                                        <p class="width_300">나트랑</p>
+                                        <a class="ml_40 bod_r" href="#">둘러보기</a>
+                                    </div>
+                                    <div class="rank flex">
+                                        <p class="mr_25">5</p>
+                                        <p class="width_300">푸꾸옥</p>
+                                        <a class="ml_40 bod_r" href="#">둘러보기</a>
+                                    </div>
+                                    <div class="rank flex">
+                                        <p class="mr_25">6</p>
+                                        <p class="width_300">두바이</p>
+                                        <a class="ml_40 bod_r" href="#">둘러보기</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="rank flex">
+                                        <p class="mr_25">7</p>
+                                        <p class="width_300">발리</p>
+                                        <a class="ml_40 bod_r" href="#">둘러보기</a>
+                                    </div>
+                                    <div class="rank flex">
+                                        <p class="mr_25">8</p>
+                                        <p class="width_300">괌</p>
+                                        <a class="ml_40 bod_r" href="#">둘러보기</a>
+                                    </div>
+                                    <div class="rank flex">
+                                        <p class="mr_25">9</p>
+                                        <p class="width_300">홍콩</p>
+                                        <a class="ml_40 bod_r" href="#">둘러보기</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="rank flex">
+                                        <p class="mr_25">10</p>
+                                        <p class="width_300">스페인</p>
+                                        <a class="ml_40 bod_r" href="#">둘러보기</a>
+                                    </div>
+                                </div>
+                            </div><!-- swiper-wrapper -->
+                        </div><!-- swiper swiper6 -->
+                        <div class="swiper-pagination flex3"></div>
+                    </div><!-- swiper-sc6 -->
+                </div><!-- top-cont-R -->
+                <div class="bottom-cont-R">
+                    <h3>공지사항</h3>
+                    <div class="notice-box">
+                        <tr th:each="board : ${recentBoard}">
+                            <div class="notification">
+                                <td>
+                                    <b><a th:href="@{|/board/detail/${board.id}|}" th:text="${board.title}"></a></b>
+                                </td>
+                                <td>
+                                    <span th:text="${#temporals.format(board.createdAt, 'yyyy.MM.dd')}"></span>
+                                </td>
+                            </div>
+                            <hr>
+                        </tr>
+                    </div>
+                </div><!-- bottom-cont-R -->
+            </div><!-- right-area -->
+        </div><!-- center-box -->
+    </section><!-- s3 -->
+
+    <!-- s4 -->
+    <section class="s4">
+        <div class="center-box">
+            <div class="s4_title flex">
+                <img alt="M타임딜" th:src="@{/img/alarm.png}">
+                <h2>M타임딜</h2>
+            </div>
+            <div class="sub_title">
+                <p>기간한정 특가찬스! 망설이면 늦어요!</p>
+            </div>
+            <div class="time-deal">
+                <a class="flex" href="#">
+                    <div class="time-deal-photo">
+                        <img alt="타임딜" th:src="@{/img/time-deal.jpg}">
+                    </div>
+                    <div class="time-deal-txt">
+                        <div class="d-day" id="d-day">
+                        </div>
+                        <div class="d-day-txt">
+                            <h3>라오스 완전정복 with 최우수 가이드</h3>
+                            <span>#라오스 #방비엥 #비엔티엔 #루앙프라방 #라오스핵심일주 #라오스 우수가이드</span>
+                            <span>메가세일 즉시할인 3만원+ 쿠폰할인 3만원 + 카드할인까지</span>
+                            <h3>특가 469,900원 부터</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="time-deal-swiper">
+                <div class="swiper swiper7">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide flex" th:each="item : ${tripItems3}">
+                            <a class="flex" th:href="@{|/reservation/booking/${item.id}|}">
+                                <img th:alt="${item.title}" th:src="${item.image}">
+                                <div>
+                                    <span>D-3</span>
+                                    <h3 th:utext="${item.title}"></h3>
+                                    <p>특가 <b th:text="${#numbers.formatInteger(item.lprice, 3, 'COMMA')}"></b>원 부터</p>
+                                </div>
+                            </a>
+                        </div><!-- swiper-slide -->
+                    </div><!-- swiper-wrapper -->
+                </div><!-- swiper swiper7 -->
+                <div class="swiper-button-prev">
+                    <svg fill="none" height="24" stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="swiper-button-next">
+                    <svg fill="none" height="24" stroke-width="1.5" viewBox="0 0 24 24" width="24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div><!-- center-box -->
+    </section><!-- s4 -->
+
+    <!-- S5 -->
+    <section class="s5">
+        <div class="center-box">
+            <h2>지금 리버에서는</h2>
+            <div class="swiper swiper8">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img alt="무료숙박권 응모" th:src="@{/img/sc5_slide1.png}">
+                            <br>
+                            <p>[이벤트]무료 숙박권 응모</p>
+                        </a>
+                    </div><!-- swiper-slide -->
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img alt="영화 기대평 이벤트" th:src="@{/img/sc5_slide2.png}">
+                            <br>
+                            <p>영화&#60;대가족&#62; 기대평 이벤트</p>
+                        </a>
+                    </div><!-- swiper-slide -->
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img alt="월드리조트 특별혜택" th:src="@{/img/sc5_slide3.png}">
+                            <br>
+                            <p>[사이판]월드리조트 특별혜택</p>
+                        </a>
+                    </div><!-- swiper-slide -->
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img alt="반값 할인 이벤트" th:src="@{/img/sc5_slide4.png}">
+                            <br>
+                            <p>[수험생 단독 혜택]반값 할인 이벤트</p>
+                        </a>
+                    </div><!-- swiper-slide -->
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img alt="반값 할인 이벤트" th:src="@{/img/sc5_slide5.png}">
+                            <br>
+                            <p>[전세계호텔] 5% 할인쿠폰</p>
+                        </a>
+                    </div><!-- swiper-slide -->
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img alt="무료숙박권 응모" th:src="@{/img/sc5_slide1.png}">
+                            <br>
+                            <p>[이벤트]무료 숙박권 응모</p>
+                        </a>
+                    </div><!-- swiper-slide -->
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img alt="영화 기대평 이벤트" th:src="@{/img/sc5_slide2.png}">
+                            <br>
+                            <p>영화&#60;대가족&#62; 기대평 이벤트</p>
+                        </a>
+                    </div><!-- swiper-slide -->
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img alt="월드리조트 특별혜택" th:src="@{/img/sc5_slide3.png}">
+                            <br>
+                            <p>[사이판]월드리조트 특별혜택</p>
+                        </a>
+                    </div><!-- swiper-slide -->
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img alt="반값 할인 이벤트" th:src="@{/img/sc5_slide4.png}">
+                            <br>
+                            <p>[수험생 단독 혜택]반값 할인 이벤트</p>
+                        </a>
+                    </div><!-- swiper-slide -->
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img alt="반값 할인 이벤트" th:src="@{/img/sc5_slide5.png}">
+                            <br>
+                            <p>[전세계호텔] 5% 할인쿠폰</p>
+                        </a>
+                    </div><!-- swiper-slide -->
+                </div>
+            </div>
+        </div>
+    </section><!-- s5 -->
+
+    <!-- s6 -->
+    <section class="s6">
+        <div class="center-box">
+            <div class="s6_title flex">
+                <img alt="홈쇼핑" th:src="@{/img/tv.png}">
+                <h2>홈쇼핑 HIT 상품</h2>
+            </div>
+            <div class="home-shopping">
+                <div class="shop shop1" th:each="item : ${tripItems4}">
+                    <div class="shop-img">
+                        <img th:alt="${item.title}" th:src="${item.image}">
+                    </div>
+                    <div class="hover">
+                        <a th:href="@{|/reservation/booking/${item.id}|}">
+                            <h3 th:text="${item.mallName}"></h3>
+                            <div class="flex">
+                                # <span th:text="${item.category1}"></span>
+                                # <span th:text="${item.category2}"></span>
+                                # <span th:text="${item.category3}"></span>
+                            </div>
+                            M
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- s6 -->
+</div>
+<script layout:fragment="script" type="text/javascript">
+    let targetDate = new Date("12 25, 2024 24:00:00").getTime();
+    // 1초마다 함수 생성, 실행
+    let x = setInterval(function() {
+
+        // 현재 날짜 구하기
+        let now = new Date().getTime();
+
+        // 타겟 날짜에서 현재 날짜를 뺀 시간 구하기
+        let distance = targetDate - now;
+
+        // 각 변수에 일, 시, 분, 초(밀리초)를 등록
+        let day = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hour = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+        let minute = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
+        let second = Math.floor(distance % (1000 * 60) / 1000);
+
+        // 만약 day가 0이면 "당일"임
+        day = day === 0 ? "당일" : day.toString().padStart(2, "0");
+        hour = hour.toString().padStart(2, "0");
+        minute = minute.toString().padStart(2, "0");
+        second = second.toString().padStart(2, "0");
+
+        // 화면에 표시
+        document.getElementById("d-day").innerHTML = "<b>" + day + "</b>일 <b>" + hour + " : " + minute + " : " + second + "</b> 남았습니다.";
+    });
+
+</script>
+</body>
+</html>

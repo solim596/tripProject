@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="center-box write_st">
+        <h2 style="text-align: center;">글쓰기 / 글 수정하기</h2>
+        <form method="post" th:object="${boardForm}">
+
+            <input th:name="${_csrf?.parameterName}" th:value="${_csrf?.token}" type="hidden">
+
+            <table class="table">
+                <tr>
+                    <td>제목 :</td>
+                    <td>
+                        <input name="title" placeholder="제목을 입력해 주세요." th:field="*{title}" type="text" style="width: 100%;">
+                        <div th:errors="*{title}" th:if="${#fields.hasErrors('title')}"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>내용 :</td>
+                    <td>
+                        <textarea cols="70" name="content" placeholder="내용을 입력해 주세요." rows="5"
+                                  th:field="*{content}"></textarea>
+                        <div th:errors="*{content}" th:if="${#fields.hasErrors('content')}"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button class="btn btn-outline-primary" type="submit">글쓰기</button>
+                        <button class="btn btn-outline-secondary" onclick="location.href='/board/list'" type="button">
+                            목록
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>

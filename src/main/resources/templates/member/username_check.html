@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/swiper-bundle.min.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/reservation.css}">
+<link rel="stylesheet" th:href="@{/css/goods.css}">
+<link rel="stylesheet" th:href="@{/css/member.css}">
+<link rel="stylesheet" th:href="@{/css/sub.css}">
+
+<script th:src="@{/js/jquery-3.7.1.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/swiper-bundle.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+<style>
+    h3 {
+        text-align: center;
+        margin: 50px auto;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .btn_st {
+        display: flex;
+        margin auto;
+        padding: 10px 80px;
+        font-size: 20px;
+        margin: auto
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>아이디 중복 검사</title>
+    <style>
+        div { text-align: center; }
+        button { border: 1px solid #999; font-size: 14px; padding: 7px; }
+    </style>
+</head>
+<body>
+<h3 th:text="${message}"></h3>
+<button onclick="closeWindow()" type="button" class="btn btn-primary btn_st">닫기</button>
+<script type="text/javascript">
+    function closeWindow() {
+        window.close();
+    }
+</script>
+</body>
+</html>

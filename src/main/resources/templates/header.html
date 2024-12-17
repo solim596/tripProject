@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<div th:fragment="header">
+    <header>
+        <div class="center-box">
+            <div class="header1 flex">
+                <div class="left-h flex">
+                    <div class="logo">
+                        <a th:href="@{/}"><img alt="logo" th:src="@{/img/logo.png}"></a>
+                    </div>
+                    <div class="search-box flex">
+                        <input name="search" type="text" placeholder="검색어를 입력해 주세요.">
+                        <span><img alt="search" th:src="@{/img/search-icon.png}"></span>
+                    </div>
+                    <div class="popular flex">
+                        <p class="fs12">인기 검색어</p>
+                        <div class="popular-word flex">
+                            <div class="scrolling-words">
+                                <ul>
+                                    <li><b>1</b>&nbsp;&nbsp;대만</li>
+                                    <li><b>2</b>&nbsp;&nbsp;보홀</li>
+                                    <li><b>3</b>&nbsp;&nbsp;다낭</li>
+                                    <li><b>4</b>&nbsp;&nbsp;나트랑</li>
+                                    <li><b>5</b>&nbsp;&nbsp;푸꾸옥</li>
+                                    <li><b>6</b>&nbsp;&nbsp;두바이</li>
+                                    <li><b>7</b>&nbsp;&nbsp;발리</li>
+                                    <li><b>8</b>&nbsp;&nbsp;괌</li>
+                                    <li><b>9</b>&nbsp;&nbsp;홍콩</li>
+                                    <li><b>10</b>&nbsp;&nbsp;스페인</li>
+                                </ul>
+                            </div>
+                            <span><img th:src="@{/img/down_arrow_icon.png}" alt="화살표"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-h">
+                    <ul class="flex">
+                        <li>
+                            <a th:href="@{/member/login}" sec:authorize="isAnonymous()">
+                                <img th:src="@{/img/login-icon.png}" alt="login"><br><p>로그인</p>
+                            </a>
+                            <a th:href="@{/member/logout}" sec:authorize="isAuthenticated()">
+                                <img th:src="@{/img/out.png}" alt="logout"><br><p>로그아웃</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/member/register}">
+                                <img th:src="@{/img/signUp-icon.png}" alt="signIn"><br><p>회원가입</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/reservation/view}">
+                                <img th:src="@{/img/reserve-icon.png}" alt="reserve"><br><p>예약내역</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/cart/cart}">
+                                <img th:src="@{/img/basket.png}" alt="reserve"><br><p>장바구니</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header2 flex">
+                <div class="left-h">
+                    <ul class="flex">
+                        <li class="total-menu">
+                            <a href="#">
+                                <img th:src="@{/img/menu_icon.png}" alt="전체메뉴"><p style="font-family: none;">전체메뉴</p>
+                            </a>
+                        </li>
+                        <li><a th:href="@{/sub/overseas}">해외여행</a></li>
+                        <li><a th:href="@{/sub/domestic}">국내여행</a></li>
+                        <li><a th:href="@{/sub/airplane}">항공권</a></li>
+                        <li><a th:href="@{/sub/hotel}">호텔안내</a></li>
+                        <li><a th:href="@{/goods/list}">여행굿즈 쇼핑몰</a></li>
+                    </ul>
+                </div>
+                <div class="right-h">
+                    <ul class="flex">
+                        <li><a href="#">기획전</a></li>
+                        <li><a th:href="@{/trip/list}">여행상품</a></li>
+                        <li><a th:href="@{/board/list}">공지사항</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="total-menu-area">
+        <img th:src="@{/img/total-menu.png}" alt="전체메뉴">
+    </div>
+</div>
+</html>

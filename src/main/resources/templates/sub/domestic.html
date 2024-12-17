@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>국내여행</title>
+</head>
+<body>
+<div class="wrap" layout:fragment="content">
+    <div class="center-box">
+        <div class="subPage">
+            <h2>국내여행 정보</h2>
+            <div class="item-list">
+                <ul>
+                    <li th:each="item : ${items}">
+                        <div class="img_area">
+                            <img th:alt="${item.title}" th:src="${item.image}">
+                        </div>
+                        <div class="cont">
+                            <p th:text="${item.title}"></p>
+                            <p th:text="${#numbers.formatInteger(item.lprice, 3, 'COMMA') + '원'}"></p>
+                            <p th:text="${item.mallName}"></p>
+                            <p th:text="${item.category1}"></p>
+                            <p th:text="${item.category2}"></p>
+                            <p th:text="${item.category3}"></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- subPage -->
+    </div>
+</div>
+<script layout:fragment="script" type="text/javascript">
+
+</script>
+</body>
+</html>
